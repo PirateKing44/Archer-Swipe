@@ -78,7 +78,7 @@ Open each file and replace all `{{PLACEHOLDER}}` values:
 - `{{BUSINESS_NAME}}` → Your company name
 - `{{YOUR_NAME}}` → Your name
 - `{{BRAND_1_NAME}}` → Your brand name
-- `{{DASHBOARD_URL}}` → Your dashboard URL (e.g., http://localhost:3847)
+- `{{DASHBOARD_URL}}` → Your dashboard URL (e.g., http://localhost:YOUR_PORT)
 - etc.
 
 **d) Register in openclaw.json:**
@@ -133,7 +133,7 @@ Every template file uses `{{PLACEHOLDER}}` syntax. Here's the complete list:
 | `{{YOUR_NAME}}` | Your name | Allen Brouwer |
 | `{{YOUR_ROLE}}` | Your title | Founder & CEO |
 | `{{BUSINESS_NAME}}` | Your company | Sterling AI |
-| `{{DASHBOARD_URL}}` | Your dashboard URL | http://localhost:3847 |
+| `{{DASHBOARD_URL}}` | Your dashboard URL | http://localhost:YOUR_PORT |
 | `{{YOUR_TIMEZONE}}` | IANA timezone | America/New_York |
 | `{{YOUR_PRIMARY_MODEL}}` | Default LLM model ID | minimax-coding/MiniMax-M2.5 |
 
@@ -157,7 +157,7 @@ Every template file uses `{{PLACEHOLDER}}` syntax. Here's the complete list:
 ### Slack Channels
 | Placeholder | What to Put | Example |
 |-------------|-------------|---------|
-| `{{SLACK_CHANNEL_ID_*}}` | Slack channel ID | C0AG66Y2RGC |
+| `{{SLACK_CHANNEL_ID_*}}` | Slack channel ID | C1234567890 |
 | `{{*_CHANNEL_NAME}}` | Channel name (no #) | lana |
 
 ### Outreach-Specific

@@ -10,7 +10,7 @@
 
 ## CRM Integration
 - **API Endpoint:** `{{DASHBOARD_URL}}/api/{{CRM_ENDPOINT}}`
-  <!-- Example: http://localhost:3847/api/fund/contacts -->
+  <!-- Example: http://localhost:YOUR_PORT/api/fund/contacts -->
 - Query contacts: GET with stage filters
 - Update contacts: PATCH within 60 seconds of any action
 - Create contacts: POST (only from enrichment agent handoffs)
