@@ -1,0 +1,130 @@
+// ============================================================
+// STERLING AI STARTER KIT — Agent Registration Template
+// ============================================================
+// Merge this into your openclaw.json under "agents.list"
+// Replace all {{PLACEHOLDER}} values with your actual paths/IDs
+//
+// After adding agents here, create their workspace directories
+// and identity files (SOUL.md, AGENTS.md, RULES.md, TOOLS.md, USER.md)
+// ============================================================
+{
+  "agents": {
+    "list": [
+      // --- YOUR MAIN ORCHESTRATOR (already exists) ---
+      {
+        "id": "main",
+        "default": true,
+        "name": "{{YOUR_ORCHESTRATOR_NAME}}",
+        "workspace": "{{OPENCLAW_PATH}}/workspace",
+        "agentDir": "{{OPENCLAW_PATH}}/agents/main",
+        "subagents": {
+          "allowAgents": [
+            "main",
+            "{{CONTENT_AGENT_ID}}",
+            "{{OUTREACH_AGENT_ID}}",
+            "{{DISTRIBUTION_AGENT_ID}}",
+            "{{ENRICHMENT_AGENT_ID}}",
+            "{{CREATIVE_AGENT_ID}}",
+            "{{SOCIAL_AGENT_ID}}"
+          ]
+        }
+      },
+
+      // --- CONTENT WRITER & STRATEGIST ---
+      // Role: Long-form content, blog posts, SEO, video scripts
+      // Sterling AI equivalent: Lana
+      {
+        "id": "{{CONTENT_AGENT_ID}}",
+        "name": "{{CONTENT_AGENT_NAME}}",
+        "workspace": "{{OPENCLAW_PATH}}/agents/{{CONTENT_AGENT_ID}}/workspace",
+        "agentDir": "{{OPENCLAW_PATH}}/agents/{{CONTENT_AGENT_ID}}"
+      },
+
+      // --- BUSINESS DEVELOPMENT / OUTREACH ---
+      // Role: Pipeline management, LinkedIn outreach, CRM ops, investor/client nurturing
+      // Sterling AI equivalent: Cyril
+      {
+        "id": "{{OUTREACH_AGENT_ID}}",
+        "name": "{{OUTREACH_AGENT_NAME}}",
+        "workspace": "{{OPENCLAW_PATH}}/agents/{{OUTREACH_AGENT_ID}}/workspace",
+        "agentDir": "{{OPENCLAW_PATH}}/agents/{{OUTREACH_AGENT_ID}}"
+      },
+
+      // --- DISTRIBUTION / PARASITE SEO ---
+      // Role: Repurpose content across platforms (Reddit, Quora, Medium, Dev.to, etc.)
+      // Sterling AI equivalent: Pam
+      {
+        "id": "{{DISTRIBUTION_AGENT_ID}}",
+        "name": "{{DISTRIBUTION_AGENT_NAME}}",
+        "workspace": "{{OPENCLAW_PATH}}/agents/{{DISTRIBUTION_AGENT_ID}}/workspace",
+        "agentDir": "{{OPENCLAW_PATH}}/agents/{{DISTRIBUTION_AGENT_ID}}"
+      },
+
+      // --- CRM ENRICHMENT & LEAD DISCOVERY ---
+      // Role: Data quality, lead scoring, email enrichment, ICP matching
+      // Sterling AI equivalent: Framboise
+      {
+        "id": "{{ENRICHMENT_AGENT_ID}}",
+        "name": "{{ENRICHMENT_AGENT_NAME}}",
+        "workspace": "{{OPENCLAW_PATH}}/agents/{{ENRICHMENT_AGENT_ID}}/workspace",
+        "agentDir": "{{OPENCLAW_PATH}}/agents/{{ENRICHMENT_AGENT_ID}}"
+      },
+
+      // --- CREATIVE / VIDEO ---
+      // Role: Image generation, video production, creative assets with quality gates
+      // Sterling AI equivalent: Krieger
+      {
+        "id": "{{CREATIVE_AGENT_ID}}",
+        "name": "{{CREATIVE_AGENT_NAME}}",
+        "workspace": "{{OPENCLAW_PATH}}/agents/{{CREATIVE_AGENT_ID}}/workspace",
+        "agentDir": "{{OPENCLAW_PATH}}/agents/{{CREATIVE_AGENT_ID}}"
+      },
+
+      // --- SOCIAL MEDIA / SCHEDULING ---
+      // Role: Posting schedules, trend research, platform engagement
+      // Sterling AI equivalent: Ray
+      {
+        "id": "{{SOCIAL_AGENT_ID}}",
+        "name": "{{SOCIAL_AGENT_NAME}}",
+        "workspace": "{{OPENCLAW_PATH}}/agents/{{SOCIAL_AGENT_ID}}/workspace",
+        "agentDir": "{{OPENCLAW_PATH}}/agents/{{SOCIAL_AGENT_ID}}"
+      }
+    ]
+  },
+
+  // --- SLACK CHANNEL BINDINGS ---
+  // Each agent gets their own Slack channel
+  // Create channels first, then paste the channel IDs here
+  "bindings": [
+    {
+      "channel": "{{SLACK_CHANNEL_ID_CONTENT}}",
+      "agentId": "{{CONTENT_AGENT_ID}}",
+      "enabled": true
+    },
+    {
+      "channel": "{{SLACK_CHANNEL_ID_OUTREACH}}",
+      "agentId": "{{OUTREACH_AGENT_ID}}",
+      "enabled": true
+    },
+    {
+      "channel": "{{SLACK_CHANNEL_ID_DISTRIBUTION}}",
+      "agentId": "{{DISTRIBUTION_AGENT_ID}}",
+      "enabled": true
+    },
+    {
+      "channel": "{{SLACK_CHANNEL_ID_ENRICHMENT}}",
+      "agentId": "{{ENRICHMENT_AGENT_ID}}",
+      "enabled": true
+    },
+    {
+      "channel": "{{SLACK_CHANNEL_ID_CREATIVE}}",
+      "agentId": "{{CREATIVE_AGENT_ID}}",
+      "enabled": true
+    },
+    {
+      "channel": "{{SLACK_CHANNEL_ID_SOCIAL}}",
+      "agentId": "{{SOCIAL_AGENT_ID}}",
+      "enabled": true
+    }
+  ]
+}
