@@ -1,0 +1,182 @@
+[
+  {
+    "_comment": "CONTENT: Daily content drafting run",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "{{CONTENT_AGENT_ID}}",
+    "name": "daily-content-run",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 5 * * 1-5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Good morning. Run your daily content session: check active drafts, produce today's content, post to Slack for review.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 600
+    }
+  },
+  {
+    "_comment": "ENRICHMENT: Weekly CRM audit + lead discovery",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "{{ENRICHMENT_AGENT_ID}}",
+    "name": "weekly-enrichment",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 6 * * 5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Run Workflow A (enrichment audit) followed by Workflow B (discovery). Report results to Slack.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 600
+    }
+  },
+  {
+    "_comment": "OUTREACH: Morning pipeline review",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "{{OUTREACH_AGENT_ID}}",
+    "name": "morning-pipeline-review",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 9 * * 1-5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Morning pipeline review. Pull all contacts from CRM, work backward from highest-stage deals. Flag anything needing follow-up. Post report to Slack.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 300
+    }
+  },
+  {
+    "_comment": "OUTREACH: Midday warm nurture",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "{{OUTREACH_AGENT_ID}}",
+    "name": "midday-warm-nurture",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 12 * * 1-5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Warm connection nurture. Check for newly accepted connections. Send follow-up DMs to those accepted 12-24 hours ago. Report to Slack.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 300
+    }
+  },
+  {
+    "_comment": "OUTREACH: Afternoon new outreach",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "{{OUTREACH_AGENT_ID}}",
+    "name": "afternoon-outreach",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 15 * * 1-5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "New outreach run. Send connection requests to approved targets. Max {{DAILY_LIMIT}} per day. Sequential, one at a time. Report count to Slack.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 300
+    }
+  },
+  {
+    "_comment": "OUTREACH: Evening daily report",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "{{OUTREACH_AGENT_ID}}",
+    "name": "evening-daily-report",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 17 * * 1-5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Daily wrap-up. Post full pipeline report: connections sent, responses received, meetings booked, escalations, full stage breakdown.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 300
+    }
+  },
+  {
+    "_comment": "DISTRIBUTION: Daily platform distribution",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "{{DISTRIBUTION_AGENT_ID}}",
+    "name": "daily-distribution",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 10 * * 1-5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "isolated",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Check for approved content ready for distribution. Adapt and post to today's scheduled platform. Report to Slack.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 300
+    }
+  },
+  {
+    "_comment": "ORCHESTRATOR: Monday weekly planning",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "main",
+    "name": "monday-weekly-planning",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 10 * * 1",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Weekly planning session. Review last week's output across all agents. Set priorities for this week. Post plan to Slack.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 300
+    }
+  },
+  {
+    "_comment": "ORCHESTRATOR: Friday weekly review",
+    "id": "GENERATE_YOUR_OWN_UUID",
+    "agentId": "main",
+    "name": "friday-weekly-review",
+    "enabled": false,
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 11 * * 5",
+      "tz": "{{YOUR_TIMEZONE}}"
+    },
+    "sessionTarget": "main",
+    "wakeMode": "next-heartbeat",
+    "payload": {
+      "kind": "agentTurn",
+      "text": "Weekly review. Summarize: content produced, leads discovered/enriched, outreach sent, meetings booked, creative delivered. What worked, what didn't, what to adjust next week.",
+      "model": "{{YOUR_PRIMARY_MODEL}}",
+      "timeoutSeconds": 300
+    }
+  }
+]
