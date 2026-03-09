@@ -1,4 +1,5 @@
-# Sterling AI Starter Kit
+#<img width="1632" height="656" alt="Gemini_Generated_Image_z9qswxz9qswxz9qs" src="https://github.com/user-attachments/assets/566cfce6-f79b-4a83-b953-211d451caeb0" />
+ Sterling AI Starter Kit
 ## Build Your Own AI Agent Team
 
 **Price:** Free
