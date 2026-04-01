@@ -1,4 +1,4 @@
-https://youtu.be/QIDyy-KtLRE?si=t0Jlf8OkJBrSNKGS
+[![Watch the video](https://img.youtube.com/vi/QIDyy-KtLRE/maxresdefault.jpg)](https://youtu.be/QIDyy-KtLRE)
 
  Sterling AI Starter Kit
 ## Build Your Own AI Agent Team
