@@ -1,4 +1,4 @@
-#<img width="1632" height="656" alt="Gemini_Generated_Image_z9qswxz9qswxz9qs" src="https://github.com/user-attachments/assets/566cfce6-f79b-4a83-b953-211d451caeb0" />
+#<iframe width="560" height="315" src="https://www.youtube.com/embed/QIDyy-KtLRE?si=sXkNCuV7uyL0gFby" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
  Sterling AI Starter Kit
 ## Build Your Own AI Agent Team
 
